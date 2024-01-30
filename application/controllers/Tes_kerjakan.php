@@ -217,7 +217,9 @@ class Tes_kerjakan extends Tes_Controller {
                         
                         // Mengupdate change time, dan jawaban essay
                         $data_tes_soal['tessoal_jawaban_text'] = $jawaban;
-                        if(strtoupper($query_soal->soal_kunci)==strtoupper($jawaban)){
+                        $darijawaban = strtoupper($query_soal->soal_kunci);
+                        $darites = strtoupper($jawaban);
+                        if (str_replace(' ', '', $darijawaban) == strtoupper(str_replace(' ', '', $darites))) {
                             $data_tes_soal['tessoal_nilai'] = $query_tes->tes_score_right;
                         }else{
                             $data_tes_soal['tessoal_nilai'] = $query_tes->tes_score_wrong;
