@@ -40,4 +40,10 @@ return $this->db->get();
     $this->db->where('tessoal_id', $tessoal_id);
     $this->db->update('cbt_tes_soal', $data);
     }
+
+    function get_soal($topik){
+        $this->db->from('cbt_soal')
+        ->where('soal_topik_id', $topik);
+        return $this->db->get();
+    }
 }

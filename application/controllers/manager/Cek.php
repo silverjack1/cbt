@@ -37,5 +37,12 @@ class Cek extends Member_Controller {
             }
         }
     }
+    public function soal(){
+        $topik = $this->input->post('topik');
+        $data['soal'] = $this->Cek_model->get_soal($topik)->result();
+        $data['topik']=$topik;
+        $this->load->view('baru/soal', $data);
+    }
+
    
 }

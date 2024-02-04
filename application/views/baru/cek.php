@@ -27,11 +27,11 @@
             <div class="row">
   <div class="col-md-6">
 
-  <form class="form-horizontal">
+  <form class="form-horizontal" action="<?php echo base_url(). 'index.php/manager/cek/soal'; ?>" method="post">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-4 control-label">Nama Tes</label>
     <div class="col-sm-8">
-    <select class="form-control">
+    <select name="topik"  class="form-control">
             <?php 
                 foreach ($daftar as $d):?>
   <option value="<?= $d['topik_id']?>"><?= $d['topik_nama']?></option>                  
@@ -40,10 +40,11 @@
 </select>
     </div>
   </div>
+  <button type="submit" class="btn btn-default">Submit</button>
 </form>
  
   </div>
-  <div class="col-md-6"><?php var_dump($soal)?></div>
+  <div class="col-md-6"><a href="<?= base_url()?>/cek/koreksi" target="_blank">Koreksi</a></div>
 </div>              
             </div><!-- /.box-header -->   
 </section>
